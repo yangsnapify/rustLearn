@@ -60,6 +60,13 @@ fn main() {
     print_value(x);
 }
 
+fn print_speak<T>(animal: T)
+where
+    T: Speak,  // This is the trait bound
+{
+    animal.speak();
+}
+
 
 
 // 3.4. 题目：如何使用 Default trait 为结构体提供一个默认值？

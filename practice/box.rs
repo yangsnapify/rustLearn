@@ -1,12 +1,15 @@
 // What does Box do in Rust?
-// a box is a smart pointer help you to allocate heal with ownership and deallocation
+// a box is a smart pointer help you to allocate heap with ownership and deallocation
 
 // What is the purpose of dyn Fn?
 // The purpose of dyn Fn in Rust is to represent trait objects for callable types 
 // (functions, closures, etc.) that implement the Fn trait. 
 // It allows you to dynamically call functions or closures without knowing their exact type at compile time
 
+The dyn keyword tells Rust to use dynamic dispatch (runtime decision on which method to call), rather than static dispatch (which would normally happen with concrete types).
+
 // dyn FnMut, dyn FnOnce, dyn Fn
+// Box<dyn Speak> / box<dyn Fn()> / box<Dyn Fn(i32)> 
 
 trait Speak {
     fn speak(&self);
