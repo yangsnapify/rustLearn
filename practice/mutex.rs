@@ -25,8 +25,14 @@
 
 
 // How does Mutex enable safe mutable access to data in a concurrent environment?
-// What is the role of Mutex::lock() in preventing data races?
+//  Locking and Unlocking Mechanism
 
+// What is the role of Mutex::lock() in preventing data races?
+// When a thread calls Mutex::lock(), it attempts to acquire the mutex. If the mutex is unlocked 
+// (i.e., not currently held by any other thread), 
+// the calling thread gains exclusive ownership of the mutex and can proceed to access the shared resource.
+// Exclusive ownership means that while a thread holds the mutex, no other thread can access the shared resource protected by that mutex. 
+// This prevents multiple threads from modifying or reading the shared data simultaneously.
 
 // What happens if you try to lock a Mutex that is already locked? How can you handle that situation?
 // if you try to lock a mutex that already locked the calling thread will be block until the lock become available
@@ -113,8 +119,9 @@ where F: FnMut(&mut T)
 // ordering::SeqCst
 
 
-// ref/ refcell
-
+// cell/ refcell
+// cell provide interior mutability for types that implement copy trait, it copy the value in and out so its not a reference to the value
+// RefCell provides interior mutability for any type, not just types that implement the Copy trait. It uses runtime borrow checking to allow mutable or immutable references to its value, ensuring borrowing rules are followed.
 
 
 
